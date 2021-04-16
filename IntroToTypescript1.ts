@@ -1,93 +1,83 @@
-// Alternative to jav ascript
-/***
-*Alternative to js 
-*Not supported by brower 
-*Strict type
-Supports  modern features (arrow functions , let const)
-Extra features 
- */
-
-/***
- * What is typescript 
- * Typescript philosphy
- * Why use Typescript
- * Using typescript 
- * **/ 
-
-//  The basics  of variables
-// drwabacks of the var keyword 
-function varFunction(){
-  var x="111";
-  if(true){
-    var x="999";
-  } //variable redfined
- console.log(x);
-};
-
-varFunction()
-
-
-// declaring with let 
-function letFunction(){
-  let x="111";
-  if(true){
-    let x=999;
+// Switch Statement 
+function switchFunction(a:number):void{
+  switch(a){
+    case 1:
+    let variableInCase1="Test";
+    console.log(variableInCase1);
+    break;
+    case 2:
+    let varaibleInCase2="Test2";
+    console.log(varaibleInCase2);
+    break;
+    default:
+    console.log("Defalut");
   }
-  console.log(x)
 }
-letFunction()
 
-// allowing the inner scope to have access to it 
-var myVarVariableOutSide="I am outside";
-let myLetVariableOutside="I am outside too";
-
-function letOutsideFunction(){
-  console.log(myVarVariableOutSide)
-  console.log(myLetVariableOutside)
-}
-letOutsideFunction();
-
-// Specifying  type 
-var varName1:number;
-let varName2:string;
- declare const trialName:boolean;
+switchFunction(1);
+switchFunction(2);
 
 /***
- * Declaring Types in Untyped Code
- * using the declare keyword  "ambient declaration"
- * 
+ * Multiple ways of declaring a string*/ 
+let w="Value1";
+let x="this is a string with the value " + w;
+let y="this is a string with the value  " + w;
+let z=`this is a string ${w}`;
+
+console.log(w,x,y,z)
+
+// Backticks
+let word="yes!"
+let stringInterpolation=`this is a string ${word}`;
+console.log(stringInterpolation);
+
+// Strings on Multiple lines
+let  multiline1="Line\n" +"Line2\n"+"Line3\n";
+
+let multiline2=`Line1
+Line2
+Line3`;
+
+console.log(multiline1);
+console.log(multiline2)
+
+// number
+const xad: number=10;
+let cad:number=15;
+var p:number=123;
+console.log(`Here are 3 variables of type number`,cad,p,xad)
+
+// number base
+let dec:number=10;
+let hex:number=0x10;
+let octo:number=0o10;
+let bin:number=0b10;
+console.log("Here are 4 numbers",dec,hex,octo,bin);
+let int:number=1;
+let float:number=1.1;
+let negative:number=-100;
+console.log(typeof(int))
+console.log(typeof(float))
+console.log(typeof(negative))
+// numeric separator
+const numericSeparator1=560_000_067;
+console.log(numericSeparator1)
+
+/*****
+ * Boolean
+ *
  */
-declare let age:number;
-export default age;
+// Boolean
+let bol:boolean=true;
+console.log(bol);
 
-declare function ambientFunction(i:number):void;
+let myValueCanChange:boolean =true;
+console.log(myValueCanChange);
+myValueCanChange=!myValueCanChange;
+console.log(myValueCanChange);
+// Boolean Function 
+console.log(Boolean(false));
+console.log(Boolean("false"));
 
- declare function myFunction(i:number){
-  ambientFunction(1);
-}
-
-// Hoisting varibles global or local scope
-  declare var x:string| undefined =undefined;
- x="not declared before assignment";
- x="declared after assignment and all fine";
-
-//  typecript scope is  javascript scope
-// shadowing scope -declaring a variable twice (inner+outer) 
-// function f1(i:number){
-//   console.log("Parameter value",i);
-//   let i:number=10;
-// }
-// f1(0);
-// Cpturing scope
-
-function mainFunction(){
-  let innerFunction;
-  if(true){
-    let variableCaputureByTheInnerFunction="AvailableToTheInnerFunction"
-    innerFunction=function(){
-      return varaibleCapturedByTheInnerFunction;
-    }
-  }
-  return innerFunction;
-}
-console.log(mainFunction())
+// Boolean Function
+console.log(new)
